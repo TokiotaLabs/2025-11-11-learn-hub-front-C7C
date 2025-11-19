@@ -1,1 +1,133 @@
-<p>course-manager works!</p>
+<div class="flex overflow-hidden flex-col bg-white shadow-[0px_3px_6px_rgba(18,15,40,0.12)]">
+  <app-header></app-header>
+  
+  <form
+    (submit)="handleSubmit($event)"
+    class="max-w-[768px] mx-auto w-full p-16 mt-6 mb-6 bg-white rounded-lg shadow-md"
+  >
+    <h2 class="text-2xl font-bold mb-4 text-indigo-500">
+      Crear Nuevo Curso
+    </h2>
+
+    <div class="mb-4">
+      <label class="block text-sm font-medium text-gray-700">Título del Curso</label>
+      <input
+        type="text"
+        name="title"
+        [(ngModel)]="formData.title"
+        class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2"
+        required
+      />
+    </div>
+
+    <div class="mb-4">
+      <label class="block text-sm font-medium text-gray-700">Descripción</label>
+      <textarea
+        name="description"
+        [(ngModel)]="formData.description"
+        rows="4"
+        class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2"
+        required
+      ></textarea>
+    </div>
+
+    <div class="grid grid-cols-2 gap-4 mb-4">
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Fecha de Inicio</label>
+        <input
+          type="date"
+          name="startDate"
+          [(ngModel)]="formData.startDate"
+          class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2"
+          required
+        />
+      </div>
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Fecha de Fin</label>
+        <input
+          type="date"
+          name="endDate"
+          [(ngModel)]="formData.endDate"
+          class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2"
+          required
+        />
+      </div>
+    </div>
+
+    <div class="grid grid-cols-2 gap-4 mb-4">
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Duración (horas)</label>
+        <input
+          type="number"
+          name="duration"
+          [(ngModel)]="formData.duration"
+          class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2"
+          required
+        />
+      </div>
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Precio</label>
+        <input
+          type="number"
+          name="price"
+          [(ngModel)]="formData.price"
+          class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2"
+          required
+        />
+      </div>
+    </div>
+
+    <div class="mb-4">
+      <label class="block text-sm font-medium text-gray-700">Modalidad</label>
+      <input
+        type="text"
+        name="modality"
+        [(ngModel)]="formData.modality"
+        class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2"
+        required
+      />
+    </div>
+
+    <div class="mb-4">
+      <label class="block text-sm font-medium text-gray-700">Ubicación</label>
+      <input
+        type="text"
+        name="location"
+        [(ngModel)]="formData.location"
+        class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2"
+        required
+      />
+    </div>
+
+    <div class="mb-4">
+      <label class="block text-sm font-medium text-gray-700">Categoría</label>
+      <input
+        type="text"
+        name="category"
+        [(ngModel)]="formData.category"
+        class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2"
+        required
+      />
+    </div>
+
+    <div class="mb-4">
+      <label class="block text-sm font-medium text-gray-700">Plazas Disponibles</label>
+      <input
+        type="number"
+        name="availableSeats"
+        [(ngModel)]="formData.availableSeats"
+        class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2"
+        required
+      />
+    </div>
+
+    <button
+      type="submit"
+      class="w-full bg-blue-500 text-white py-2 px-4 rounded-md cursor-pointer hover:bg-blue-600 transition-colors"
+    >
+      Crear Curso
+    </button>
+  </form>
+
+  <app-footer></app-footer>
+</div>

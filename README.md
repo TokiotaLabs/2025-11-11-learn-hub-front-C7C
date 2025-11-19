@@ -1,4 +1,33 @@
-Learn Hub Front
+# Learn Hub Front
+
+This repository contains two versions of the LearnHub application:
+
+## React Version (Original)
+The original React application using Vite with HMR and ESLint. Located in the root directory.
+
+## Angular Version (Migration)
+A complete migration to Angular 18 (LTS) located in the `/srcAngular` directory.
+
+### Key Features of Angular Migration:
+- **Framework**: Angular 18.2.14 (LTS)
+- **Architecture**: Standalone Components following SOLID principles
+- **Styling**: TailwindCSS 3.x
+- **State Management**: RxJS BehaviorSubject
+- **HTTP Client**: Angular HttpClient with interceptors
+
+### Quick Start - Angular Version
+
+```bash
+cd srcAngular
+npm install
+npm start
+```
+
+For detailed Angular documentation, see [srcAngular/README_ANGULAR.md](./srcAngular/README_ANGULAR.md)
+
+---
+
+## React Version Details
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
