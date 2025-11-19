@@ -1,0 +1,10 @@
+<a [routerLink]="url" [class]="buttonClasses">
+  <img
+    *ngIf="iconUrl"
+    loading="lazy"
+    [src]="iconUrl"
+    alt="icon"
+    class="object-contain shrink-0 my-auto w-4 aspect-square"
+  />
+  <p [class]="textClasses">{{ label }}</p>
+</a>

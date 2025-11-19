@@ -1,0 +1,36 @@
+<header class="flex flex-wrap gap-5 justify-between px-6 py-0.5 w-full bg-white shadow-[0px_0px_2px_rgba(23,26,31,0.12)] max-md:px-5 max-md:max-w-full">
+  <div class="flex flex-wrap gap-10 whitespace-nowrap">
+    <a class="flex gap-2.5 my-auto text-3xl text-black" routerLink="/">
+      <img
+        loading="lazy"
+        [src]="logoUrl"
+        alt="LearnHub logo"
+        class="object-contain shrink-0 my-auto w-9 aspect-square"
+      />
+      <div class="basis-auto rotate-[2.4492937051703357e-16rad]">
+        LearnHub
+      </div>
+    </a>
+    <app-navigation></app-navigation>
+  </div>
+  <div class="flex gap-4 my-auto text-sm leading-loose">
+    <app-auth-button
+      url="/sign-up"
+      label="Sign Up"
+      variant="outline"
+      [iconUrl]="signUpIconUrl"
+    ></app-auth-button>
+    <app-auth-button
+      url="/sign-in"
+      label="Sign In"
+      variant="solid"
+      [iconUrl]="signInIconUrl"
+    ></app-auth-button>
+    <app-auth-button
+      url="/new"
+      label="New"
+      variant="solid"
+      iconUrl=""
+    ></app-auth-button>
+  </div>
+</header>

@@ -1,0 +1,12 @@
+.active-link {
+  @apply flex flex-col px-2 pt-4 font-bold text-indigo-500;
+}
+
+.active-link div:first-child {
+  @apply self-center;
+}
+
+.active-link::after {
+  content: '';
+  @apply flex shrink-0 mt-3 h-1 rounded-sm bg-indigo-500;
+}
