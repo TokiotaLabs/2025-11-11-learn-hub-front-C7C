@@ -1,1 +1,62 @@
-<p>sign-up works!</p>
+<div class="flex overflow-hidden flex-col bg-white shadow-[0px_3px_6px_rgba(18,15,40,0.12)]">
+  <app-header></app-header>
+
+  <form
+    (submit)="handleSubmit($event)"
+    class="max-w-[768px] mx-auto w-full p-16 mt-6 mb-6 bg-white rounded-lg shadow-md"
+  >
+    <h2 class="text-2xl font-bold mb-4 text-indigo-500">
+      Registro de Usuario
+    </h2>
+
+    <!-- Datos Personales -->
+    <div class="mb-4">
+      <label class="block text-sm font-medium text-gray-700">
+        Nombre completo
+      </label>
+      <input
+        type="text"
+        name="firstName"
+        [(ngModel)]="formData.firstName"
+        class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2"
+        required
+      />
+    </div>
+
+    <div class="mb-4">
+      <label class="block text-sm font-medium text-gray-700">
+        Apellido
+      </label>
+      <input
+        type="text"
+        name="lastName"
+        [(ngModel)]="formData.lastName"
+        class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2"
+        required
+      />
+    </div>
+
+    <div class="mb-4">
+      <label class="block text-sm font-medium text-gray-700">
+        Dirección de correo electrónico
+      </label>
+      <input
+        type="email"
+        name="email"
+        [(ngModel)]="formData.email"
+        class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2"
+        required
+      />
+    </div>
+
+    <button
+      type="submit"
+      id="submit-register"
+      class="w-full bg-blue-500 text-white py-2 px-4 rounded-md cursor-pointer hover:bg-blue-600 transition-colors"
+    >
+      Registrarse
+    </button>
+  </form>
+
+  <app-footer></app-footer>
+</div>

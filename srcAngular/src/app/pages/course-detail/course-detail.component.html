@@ -1,1 +1,112 @@
-<p>course-detail works!</p>
+<div *ngIf="course">
+  <app-header></app-header>
+  <div class="min-h-screen bg-white">
+    <div class="bg-[#636ae8] text-white py-16">
+      <div class="max-w-6xl mx-auto px-8">
+        <h1 class="text-4xl font-archivo font-bold mb-4">
+          {{ course.title }}
+        </h1>
+        <p class="text-xl mb-6">{{ course.description }}</p>
+        <div class="flex items-center gap-4">
+          <span class="text-lg">★★★★☆</span>
+          <span class="text-sm">4.5 (2,145 reviews)</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-8 py-12">
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
+        <div class="col-span-2">
+          <section class="mb-12">
+            <h2 class="text-2xl text-indigo-500 font-archivo font-semibold mb-4">
+              Instructor
+            </h2>
+
+            <div class="flex">
+              <div class="flex justify-center items-center w-15 h-15 rounded-full border-2 border-gray-600 p-3">
+                <span class="text-2xl">👤</span>
+              </div>
+              <div class="flex flex-col ml-4">
+                <h2 class="text-xl font-bold text-gray-600 hover:underline cursor-pointer">
+                  {{ course.instructor.name }}
+                </h2>
+                <p class="text-gray-600 text-sm mt-1">
+                  {{ course.instructor.biography }}
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section class="mb-12">
+            <h4 class="text-2xl text-indigo-500 font-archivo font-semibold mb-4">
+              What You will Learn
+            </h4>
+            <div class="grid grid-cols-2 gap-4">
+              <div *ngFor="let item of learningItems" class="flex items-center gap-2">
+                <span class="text-[#636ae8]">✓</span>
+                <span class="text-gray-700">{{ item }}</span>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <h2 class="text-2xl font-archivo font-semibold mb-4">
+              Course Content
+            </h2>
+            <div class="space-y-4">
+              <div *ngFor="let section of courseSections" class="border rounded-lg p-4">
+                <div class="flex justify-between items-center">
+                  <h3 class="font-semibold text-indigo-500">
+                    {{ section.title }}
+                  </h3>
+                  <div class="text-sm text-gray-500">
+                    {{ section.lessons }} lessons • {{ section.duration }}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="col-span-1">
+          <div class="bg-white shadow-sm rounded-lg p-6 sticky top-6">
+            <div class="mb-6">
+              <div class="text-3xl font-bold mb-4">${{ course.price }}</div>
+              <button class="w-full bg-[#636ae8] text-white py-3 rounded-lg font-semibold mb-3 cursor-pointer hover:bg-[#5259d0]">
+                Enroll Now
+              </button>
+              <button class="w-full border border-[#636ae8] text-[#636ae8] py-3 rounded-lg font-semibold cursor-pointer hover:bg-gray-50">
+                Add to Wishlist
+              </button>
+            </div>
+
+            <div class="space-y-4">
+              <div class="flex justify-between">
+                <span class="text-gray-600">Duration</span>
+                <span class="font-semibold text-gray-600">{{ course.duration }} hours</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-600">Available Seats</span>
+                <span class="font-semibold text-gray-600">{{ course.availableSeats }}</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-600">Modality</span>
+                <span class="font-semibold text-gray-600">{{ course.modality }}</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-600">Certificate</span>
+                <span class="font-semibold text-gray-600">{{ course.certification }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-footer></app-footer>
+</div>
+
+<div *ngIf="!course" class="flex items-center justify-center min-h-screen">
+  <p>Loading course details...</p>
+</div>
