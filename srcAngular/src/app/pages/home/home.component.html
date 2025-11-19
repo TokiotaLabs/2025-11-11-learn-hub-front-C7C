@@ -1,0 +1,59 @@
+<div class="flex overflow-hidden flex-col bg-white shadow-[0px_3px_6px_rgba(18,15,40,0.12)]">
+  <app-header></app-header>
+  
+  <!-- Hero Section -->
+  <div class="flex overflow-hidden flex-col w-full text-white bg-neutral-800 max-md:max-w-full">
+    <div class="flex relative flex-col w-full min-h-[640px] max-md:max-w-full">
+      <img
+        loading="lazy"
+        [src]="heroImageUrl"
+        alt="Students learning together"
+        class="object-cover absolute inset-0 size-full"
+      />
+      <div class="flex relative flex-col items-start px-20 pt-72 pb-32 w-full bg-opacity-40 max-md:px-5 max-md:py-24 max-md:max-w-full">
+        <div class="flex flex-col items-start mb-0 max-w-full w-[791px] max-md:mb-2.5">
+          <h1 class="text-6xl font-bold leading-none rotate-[2.4492937051703357e-16rad] max-md:max-w-full max-md:text-4xl">
+            Unlock Your Potential
+          </h1>
+          <p class="self-stretch mt-6 text-2xl text-gray-100 rotate-[2.4492937051703357e-16rad] max-md:max-w-full">
+            Empowering you with diverse courses for every passion and skill level.
+          </p>
+          <a
+            routerLink="/courses"
+            class="overflow-hidden px-5 py-3 mt-6 text-lg leading-loose bg-indigo-500 rounded-md border border-solid border-black border-opacity-0 rotate-[2.4492937051703357e-16rad]"
+          >
+            <p class="text-white">Explore Courses</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Courses section -->
+  <section class="flex flex-col justify-center items-center px-20 py-14 w-full bg-white max-md:px-5 max-md:max-w-full">
+    <div class="flex flex-col w-full max-w-[1176px] max-md:max-w-full">
+      <h2 class="self-center text-2xl text-black rotate-[2.4492937051703357e-16rad]">
+        Popular Courses
+      </h2>
+      <div class="grid grid-cols-2 max-md:grid-cols-1 gap-5 mt-5">
+        <div *ngFor="let course of courses" class="p-4 border rounded-lg">
+          <h3 class="text-xl font-bold">{{ course.title }}</h3>
+          <p class="text-gray-600">{{ course.description }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonial section -->
+  <section class="flex flex-col justify-center items-center px-16 py-24 w-full bg-white max-md:px-5 max-md:max-w-full">
+    <div class="w-full max-w-[1144px] max-md:max-w-full">
+      <div class="p-6 bg-gray-50 rounded-lg">
+        <p class="text-lg italic">"{{ testimonial.quote }}"</p>
+        <p class="mt-4 font-bold">{{ testimonial.name }}</p>
+        <p class="text-gray-600">{{ testimonial.role }}</p>
+      </div>
+    </div>
+  </section>
+
+  <app-footer></app-footer>
+</div>

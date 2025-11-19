@@ -1,0 +1,11 @@
+<nav class="flex flex-auto text-sm leading-loose text-gray-600 bg-opacity-0">
+  <a
+    *ngFor="let item of navItems"
+    [routerLink]="item.to"
+    routerLinkActive="active-link"
+    [routerLinkActiveOptions]="{ exact: item.to === '/' }"
+    class="overflow-hidden rounded-md bg-opacity-0 max-md:px-5 transition-all px-2 py-4 text-gray-600 hover:text-indigo-500"
+  >
+    <div class="self-center">{{ item.label }}</div>
+  </a>
+</nav>
